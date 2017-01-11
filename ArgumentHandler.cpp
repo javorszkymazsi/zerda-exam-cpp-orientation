@@ -64,9 +64,6 @@ bool ArgumentHandler::is_there_output_filename(int argc, char** argv) {
       ++counter;
     }
   }
-  if (counter != 1) {
-    throw -1;
-  }
   return (counter == 1);
 }
 
@@ -84,7 +81,7 @@ bool ArgumentHandler::is_value_provided(int argc, char** argv) throw (int) {
       ++counter;
     }
   }
-  if (counter != 2) {
+  if (counter == 0) {
     throw -2;
   }
   return (counter == 2);
